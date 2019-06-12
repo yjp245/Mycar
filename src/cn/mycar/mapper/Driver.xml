@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mycar.mapper.DriverMapper">
+
+    <!--1增加-->
+   <insert id="add" parameterType="Driver">
+       insert into driver_ (uid,dnum,dname,dpass,d_state,d_bind,beizhu)
+        values (#{uid},#{dnum},#{dname},#{dpass},#{d_state},#{d_bind},#{beizhu})
+   </insert>
+
+    <!--2 删除-->
+   <delete id="delete" parameterType="int" >
+   delete from driver_ where did=#{did}
+   </delete>
+
+    <update id="update" parameterType="Driver" >
+        update driver_ set uid=#{uid},dnum=#{dnum},dname=#{dname},dpass=#{dpass},
+        d_bind=#{d_bind},d_state=#{d_state},beizhu=#{beizhu}
+        where did=#{did}
+    </update>
+
+    <select id="list" resultType="Driver" parameterType="int">
+        select * from driver_ where uid=#{uid}
+    </select>
+    
+    <select id="findDriver" resultType="Driver" parameterType="String">
+        select * from driver_ where  dnum=#{dnum}
+    </select>
+
+    <select id="findDriverByDid" resultType="Driver" parameterType="int">
+        select * from driver_ where  did=#{did}
+    </select>
+</mapper>

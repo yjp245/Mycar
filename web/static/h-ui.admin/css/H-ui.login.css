@@ -1,0 +1,228 @@
+@charset "utf-8";
+/* -----------H-ui前端框架-------------
+* H-ui.login.css v2.2.1	后台登录页样式
+* http://www.h-ui.net/
+* Created & Modified by guojunhui
+* Date modified 2015.6.5
+*
+* Copyright 2013-2017 北京颖杰联创科技有限公司 All rights reserved.
+* Licensed under MIT license.
+* http://opensource.org/licenses/MIT
+*
+*/
+html, body {
+    height: 100%
+}
+
+body {
+    font-size: 14px;
+    background: #0e90d2 url("../images/admin-login-bg2.jpg") no-repeat;
+
+   /* z-index: 1;*/
+    /*width: 1480px*/
+}
+
+.header, .footer {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 99
+}
+/*登录头配置 start*/
+.header {
+    top: 15px;
+    left: 40px;
+    height: 60px;
+    background: url(../images/car2.png) no-repeat 0 center
+
+}
+.header #h_left{
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
+.header #h_right{
+/*    background: #00B83F;*/
+    position: absolute;
+    right: 70px
+}
+
+.header h3{
+    font-size: 12px;
+    font-family: "黑体";
+    font-weight:normal;
+    color: white;
+
+}
+.header #header_h1{
+    padding: 14px 0 0 70px;
+}
+.header #header_h2{
+    padding: 3px 0 10px 70px
+}
+
+.header h2,a{
+    font-size: 16px;
+    font-family: "黑体";
+    font-weight:normal;
+    color: white;
+    display: inline-block;
+}
+.header #header_h4{
+   /* float: right*/
+    margin-left: 30px;
+}
+
+#h_right .h_button{
+    display: inline-block;
+    width: 128px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    background:transparent;
+    border: 1px solid #31b0d5 ;
+    color: white
+}
+#h_right #r_a1{
+    color: white
+}
+#h_right #r_a2{
+
+    color: #00b7ee;
+}
+/*登录头配置 end*/
+/*标题*/
+.login_title{
+  /*  position: absolute;
+    width: 100%;
+    left: 30px;
+    right: 0;
+    height: 60px;
+    top: 190px;*/
+    position: absolute;
+    top: 190px;
+    left: 560px;
+    width: 390px;
+    height: 342px;
+/*    background: #00B83F;*/
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    text-align: center
+}
+/*
+标题end
+登录表单div start
+*/
+.login_body{
+    position: absolute;
+    top: 235px;
+    left: 550px;
+    width: 390px;
+    height: 342px;
+ /*background-color: #00B83F;*/
+    padding: 24px 24px 0 24px
+}
+/*登录表单from start*/
+.login_from{
+    width: 384px;
+    height: 318px;
+    /*background-color: #0a6999*/
+}
+/*表单输入框*/
+.login_from .f_input{
+    width: 384px;
+    height: 216px;
+  /*  background: #FFFFFF*/
+}
+.f_input .f_in{
+    width: 384px;
+    height: 108px
+}
+.input_1{
+/* background-color: #00a0e9*/
+}
+.input_2{
+  /*  background-color: #DCAC6C*/
+}
+.input{
+    margin-top: 45px;
+    font-size: 16px;
+    background: transparent;
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    line-height: 41px;
+    color: white;
+    width: 95%;
+    height: 41px;
+    padding: 8px
+
+}
+
+/*忘记密码*/
+.login_from .f_forget{
+    width: 384px;
+    height: 40px;
+   /* background: #00B83F*/
+}
+#forget{
+    padding: 12px 0px 0px 295px;
+    width: 95px;
+    height: auto;
+    font-size: 16px;
+    font-family: "黑体";
+    font-weight:normal;
+    color: white;
+    display: inline-block;
+}
+#forget:hover{
+    text-decoration: none;
+    color: #00b7ee
+}
+
+/*登录按钮*/
+.login_body .f_login{
+    width: 384px;
+    height: 78px
+   /* background: #0a6999*/
+}
+.btn-login{
+    margin-top: 30px;
+    height: 50%;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+  /*  border: 1px solid #0f9ae1;*/
+    background: #0f9ae0;
+    width: 100%
+
+}
+
+#resultSpan{
+    width: auto;
+    height: 30px;
+    font-family: 宋体;
+    font-size: 16px;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 30px;
+    color: #fff5d4
+}
+#resultSpan a{
+    font-size: 16px;
+    color: #31b0d5
+}
+/*底部信息*/
+.footer1 {
+   position: absolute;
+    top: 660px;
+    left: 650px;
+    height: 46px;
+    line-height: 46px;
+    bottom: 0;
+    text-align: center;
+    color: #fff;
+    font-size: 12px
+    /*background-color: #426374*/
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mycar.mapper.AdminMapper">
+          <!-- 1插入用户信息-->
+    <insert id="add" parameterType="Admin" >
+        insert into admin_ (aname, aphone,l_id) values (#{aname},#{aphone},#{l_id})
+    </insert>
+
+    <delete id="delete" parameterType="int">
+        delete from admin_ where l_id=#{l_id}
+    </delete>
+
+    <update id="update" parameterType="Admin" >
+   update admin_  set aname=#{aname},aphone=#{aphone} where aid=#{aid}
+    </update>
+
+    <!--查询 by lid-->
+  <select id="getAdminbyLid" parameterType="int" resultType="Admin">
+    select * from admin_ where l_id=#{l_id}
+  </select>
+
+    <!-- 查询 by aid -->
+    <select id="getAdminbyAid" parameterType="int" resultType="Admin">
+        select * from admin_ where aid=#{aid}
+    </select>
+    
+    <!--查询用户列表-->
+  <select id="list" resultType="Admin">
+      select * from admin_
+  </select>
+
+
+
+</mapper>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mycar" default="compile.module.mycar">
+  <dirname property="module.mycar.basedir" file="${ant.file.module_mycar}"/>
+  
+  <property name="module.jdk.home.mycar" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.mycar" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.mycar" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.mycar" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="mycar.output.dir" value="${module.mycar.basedir}/out/production/Mycar"/>
+  <property name="mycar.testoutput.dir" value="${module.mycar.basedir}/out/test/Mycar"/>
+  
+  <path id="mycar.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mycar.module.production.classpath">
+    <path refid="${module.jdk.classpath.mycar}"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0.classpath"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0_(2).classpath"/>
+    <path refid="library.log4j-1.2.17.classpath"/>
+    <path refid="library.aliyun-java-sdk-core-3.3.1.classpath"/>
+    <path refid="library.aliyun-java-sdk-dysmsapi-1.0.0.classpath"/>
+  </path>
+  
+  <path id="mycar.runtime.production.module.classpath">
+    <pathelement location="${mycar.output.dir}"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0.classpath"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0_(2).classpath"/>
+    <path refid="library.log4j-1.2.17.classpath"/>
+    <path refid="library.aliyun-java-sdk-core-3.3.1.classpath"/>
+    <path refid="library.aliyun-java-sdk-dysmsapi-1.0.0.classpath"/>
+  </path>
+  
+  <path id="mycar.module.classpath">
+    <path refid="${module.jdk.classpath.mycar}"/>
+    <pathelement location="${mycar.output.dir}"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0.classpath"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0_(2).classpath"/>
+    <path refid="library.log4j-1.2.17.classpath"/>
+    <path refid="library.aliyun-java-sdk-core-3.3.1.classpath"/>
+    <path refid="library.aliyun-java-sdk-dysmsapi-1.0.0.classpath"/>
+  </path>
+  
+  <path id="mycar.runtime.module.classpath">
+    <pathelement location="${mycar.testoutput.dir}"/>
+    <pathelement location="${mycar.output.dir}"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0.classpath"/>
+    <path refid="library.com.springsource.org.aopalliance-1.0.0_(2).classpath"/>
+    <path refid="library.log4j-1.2.17.classpath"/>
+    <path refid="library.aliyun-java-sdk-core-3.3.1.classpath"/>
+    <path refid="library.aliyun-java-sdk-dysmsapi-1.0.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mycar">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mycar">
+    <patternset refid="excluded.from.module.mycar"/>
+  </patternset>
+  
+  <path id="mycar.module.sourcepath">
+    <dirset dir="${module.mycar.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mycar" depends="compile.module.mycar.production,compile.module.mycar.tests" description="Compile module Mycar"/>
+  
+  <target name="compile.module.mycar.production" depends="register.custom.compilers" description="Compile module Mycar; production classes">
+    <mkdir dir="${mycar.output.dir}"/>
+    <javac2 destdir="${mycar.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mycar}/javac">
+      <compilerarg line="${compiler.args.mycar}"/>
+      <bootclasspath refid="mycar.module.bootclasspath"/>
+      <classpath refid="mycar.module.production.classpath"/>
+      <src refid="mycar.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mycar"/>
+    </javac2>
+    
+    <copy todir="${mycar.output.dir}">
+      <fileset dir="${module.mycar.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mycar.tests" depends="register.custom.compilers,compile.module.mycar.production" description="compile module Mycar; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.mycar" description="cleanup module">
+    <delete dir="${mycar.output.dir}"/>
+    <delete dir="${mycar.testoutput.dir}"/>
+  </target>
+</project>

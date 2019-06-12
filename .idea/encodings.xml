@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/cn/mycar/interceptor/LoginInterceptor.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/cn/mycar/json/JsonUtils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/mycar/udpserver/RecieveThread.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/cn/mycar/udpserver/SendThread.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/cn/mycar/util/Random_pojo.java" charset="UTF-8" />
+    <file url="file://G:/学习/java/常见/随机生成数.java" charset="GBK" />
+  </component>
+</project>

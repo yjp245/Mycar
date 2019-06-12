@@ -1,0 +1,26 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="Mycar:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Mycar_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Mycar" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="log4j-1.2.17" />
+          <element id="library" level="project" name="aliyun-java-sdk-core-3.3.1" />
+          <element id="library" level="project" name="aliyun-java-sdk-dysmsapi-1.0.0" />
+          <element id="library" level="project" name="mysql-connector-java-8.0.12" />
+          <element id="library" level="project" name="gexin-rp-fastjson-1.0.0.1" />
+          <element id="library" level="project" name="javax.mail" />
+          <element id="library" level="project" name="asm-5.2" />
+          <element id="library" level="project" name="junit-4.12" />
+          <element id="library" level="project" name="protobuf-java-2.5.0" />
+          <element id="library" level="project" name="hutool-all-4.3.1" />
+          <element id="library" level="project" name="commons-beanutils-1.9.3" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Mycar/web/Web" />
+    </root>
+  </artifact>
+</component>

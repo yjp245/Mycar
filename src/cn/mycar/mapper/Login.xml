@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mycar.mapper.LoginMapper">
+
+    <!--1增加-->
+
+    <insert id="add" parameterType="Login">
+        insert into login_ (l_user, l_pass, l_state, l_rights,ip,time,count) values (#{l_user},#{l_pass},#{l_state},#{l_rights},#{ip},#{time},#{count})
+    </insert>
+
+    <!--2删-->
+    <delete id="delete" parameterType="int">
+        delete from login_ where l_id=#{l_id}
+    </delete>
+
+    <!--3改-->
+    <update id="update" parameterType="Login">
+        update login_ set l_pass=#{l_pass},l_state=#{l_state},l_rights=#{l_rights},ip=#{ip},time=#{time},count=#{count} where l_id=#{l_id}
+    </update>
+
+
+    <!--4查账户密码-->
+    <select id="findPass" parameterType="String" resultType="String">
+        select l_pass from login_ where l_user=#{l_user}
+    </select>
+
+    <!--5查询账户信息-->
+    <select id="get" parameterType="String" resultType="Login">
+        select * from login_ where l_user=#{l_user}
+    </select>
+
+    <!--6查询全部用户-->
+    <select id="list" resultType="Login">
+        select * from login_
+    </select>
+
+    <!--7查询用户数-->
+    <select id="count" resultType="int">
+        select  count(*) from login_
+    </select>
+
+    <select id="getL_id" resultType="int" parameterType="int">
+        select l_id from login_ where l_user=#{l_user}
+    </select>
+
+    <select id="list_rights" resultType="Login" parameterType="String">
+      select * from login_ where l_rights=#{rights}
+    </select>
+
+    <select id="getByL_id" resultType="Login" parameterType="int">
+        select * from login_  where l_id=#{l_id}
+    </select>
+    
+    <update id="updatePass">
+        update login_ set l_pass=#{upass} where l_user=#{uname}
+    </update>
+</mapper>

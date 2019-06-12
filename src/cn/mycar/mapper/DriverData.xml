@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.mycar.mapper.DriverDataMapper">
+
+    <!--1增加-->
+    <insert id="addDriver" parameterType="DriverData">
+       insert into driverdata_ (dname,findperson,mq2,mq135,temperature,humidity,latitude,longitude,time)
+        values (#{dname},#{findperson},#{mq2},#{mq135},#{temperature},#{humidity},#{latitude},#{longitude},#{time})
+   </insert>
+
+
+    <!--2删-->
+    <delete id="deleteDriverByDataID" parameterType="int">
+        delete from driverdata_ where dataid=#{dataid}
+    </delete>
+
+    <!--3删除by Did-->
+    <delete id="deleteDriverByDname" parameterType="String">
+        delete from driverdata_ where dname=#{dname}
+    </delete>
+
+
+    <!--4查询设备全部信息-->
+    <select id="listAll" resultType="DriverData">
+        select * from driverdata_ where dname=#{dname}
+    </select>
+
+
+    <!--4查询设备全部信息-->
+    <select id="list" resultType="DriverData">
+        select * from driverdata_
+    </select>
+    
+    <select id="listfor20" resultType="DriverData" parameterType="String">
+         select * from driverdata_ where dname=#{dname} order by dataid DESC LIMIT 20
+    </select>
+
+  <select id="selectnewdata" parameterType="String" resultType="DriverData">
+    select * from driverdata_ where dname=#{dname} order by dataid DESC LIMIT 1
+  </select>
+
+
+</mapper>
